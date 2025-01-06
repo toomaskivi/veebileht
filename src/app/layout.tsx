@@ -1,6 +1,7 @@
 import { Chivo, MuseoModerno } from "next/font/google";
 import "./globals.css";
 import type { ReactNode } from "react";
+import { Analytics } from "@vercel/analytics/react"
 
 const chivo = Chivo({
 	subsets: ["latin"],
