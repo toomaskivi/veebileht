@@ -1,7 +1,7 @@
 import { Chivo, MuseoModerno } from "next/font/google";
 import "./globals.css";
 import type { ReactNode } from "react";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from '@vercel/analytics/next';
 
 const chivo = Chivo({
 	subsets: ["latin"],
@@ -20,7 +20,10 @@ export default async function RootLayout({
 }) {
 	return (
 		<html lang="et" className={`${chivo.variable} ${museoModerno.variable}`}>
-			<body className={chivo.className}>{children}</body>
+			<body className={chivo.className}>
+				{children}
+				<Analytics />
+			</body>
 		</html>
 	);
 }
