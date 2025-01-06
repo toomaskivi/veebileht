@@ -1,0 +1,28 @@
+{
+  "Index": {
+    "title": "Kivi",
+    "subtitle": "Better than just wood",
+    "sections": {
+      "plaster": {
+        "title": "Lime Plaster",
+        "description": "Lime plaster is a durable and breathable material that provides a natural finish. It helps regulate indoor humidity, preventing mold growth and creating a healthy living environment. Its timeless aesthetics add charm and character to any space."
+      },
+      "microcement": {
+        "title": "Microcement",
+        "description": "Microcement is a contemporary and durable surface finish that creates a smooth and elegant result. It's an ideal choice for both walls and floors, offering a waterproof and wear-resistant solution that fits perfectly into modern interiors."
+      },
+      "insulation": {
+        "title": "Hemp Wool Insulation",
+        "description": "Hemp wool insulation is an ecological and effective insulation solution. It provides excellent thermal insulation, regulates moisture, and is fully recyclable. Additionally, it is fire-resistant and resistant to pests."
+      },
+      "contact": {
+        "title": "Contact",
+        "description": "We will find the best solution for your project. <a href=\"tel:+37254518200\">+372 5451 8200</a> or send an email <a href=\"mailto:toomas@kivi.ee\">toomas@kivi.ee</a>."
+      }
+    },
+    "footer": {
+      "copyright": "© {year} Kivi",
+      "location": "Tallinn, Estonia"
+    }
+  }
+}
