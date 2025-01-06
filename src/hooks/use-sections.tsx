@@ -1,5 +1,6 @@
 "use client";
 
+import { sections as siteSections } from "@/sections"
 import { type SetStateAction, useCallback, useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
@@ -14,28 +15,10 @@ export type Section = {
 export default function useSections() {
 	const [activeSection, setActiveSection] = useState(0);
 
-	const sections: Section[] = [
-		{
-			id: "plaster",
-			background: "/plaster.jpg",
-			observer: useInView(intersectionOptions),
-		},
-		{
-			id: "microcement",
-			background: "/microcement.jpg",
-			observer: useInView(intersectionOptions),
-		},
-		{
-			id: "insulation",
-			background: "/insulation.jpg",
-			observer: useInView(intersectionOptions),
-		},
-		{
-			id: "contact",
-			background: "/contact.jpg",
-			observer: useInView(intersectionOptions),
-		},
-	];
+	const sections: Section[] = siteSections.map((section) => ({
+		...section,
+		observer: useInView(intersectionOptions),
+	}));
 
 	const scrollToSection = (index: number) => {
 		sections[index].observer.entry?.target.scrollIntoView({
