@@ -7,7 +7,7 @@ export type Section = {
 
 export const sections: Section[] = [
   {
-    id: "lubikrohv",
+    id: "plaster",
     background: "/lubikrohv.jpg"
   },
   {
