@@ -19,8 +19,8 @@ export const sections: Section[] = [
     background: '/marmorino.jpg'
   },
   {
-    id: "insulation",
-    background: '/insulation.jpg'
+    id: "savikrohv",
+    background: '/savikrohv.jpg'
   },
   {
     id: "contact",
