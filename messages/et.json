@@ -3,6 +3,10 @@
     "title": "Kivi",
     "subtitle": "Parem kui lihtsalt puine",
     "sections": {
+      "savikrohv": {
+        "title": "Savikrohv",
+        "description": "Kui otsite looduslikku, tervislikku ja vastupidavat viisi oma seinte viimistlemiseks, on savikrohv suurepärane valik."
+      },
       "plaster": {
         "title": "Lubikrohv",
         "description": "Lubikrohv on vastupidav ja hingav materjal, mis pakub looduslikku viimistlust. See aitab reguleerida sisekliima niiskust, ennetades hallituse teket ja luues tervisliku elukeskkonna. Selle ajatu esteetika lisab igale ruumile võlu ja iseloomu."
@@ -15,10 +19,7 @@
         "title": "Marmoriino",
         "description": "Marmoriino on looduslikust lubjast valmistatud viimistluspahtel, millega saab luua satiinse, marmorit meenutava pinna. See on inspireeritud Veneetsia meistrite ajaloolisest tehnikast, kus marmorit ja looduslikku kivi imiteeriti viimistlustehnikate abil."
       },
-      "savikrohv": {
-        "title": "Savikrohv",
-        "description": "Kui otsite looduslikku, tervislikku ja vastupidavat viisi oma seinte viimistlemiseks, on savikrohv suurepärane valik."
-      },
+     
       "contact": {
         "title": "Kontakt",
         "description": "Leiame parima lahendus teie projektile. Võtke ühendust ja arutame, kuidas saame teie visiooni ellu viia. Helista <a href=\"tel:+37254518200\">+372 5451 8200</a> või saada meil <a href=\"mailto:toomas@kivi.ee\">toomas@kivi.ee</a>."
