@@ -10,6 +10,7 @@ export const sections: Section[] = [
     id: "savikrohv",
     background: '/savikrohv.jpg'
   },
+  {
     id: "plaster",
     background: "/lubikrohv.jpg"
   },
@@ -21,9 +22,7 @@ export const sections: Section[] = [
     id: "marmorino",
     background: '/marmorino.jpg'
   },
-  {
-   
-  {
+ {
     id: "contact",
     background: '/contact.jpg'
   }
