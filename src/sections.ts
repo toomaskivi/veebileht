@@ -16,7 +16,7 @@ export const sections: Section[] = [
   },
   {
     id: "microcement",
-    background: '/microwc.jpg'
+    background: '/mikrowc.jpg'
   },
   {
     id: "marmorino",
