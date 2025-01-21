@@ -1,6 +1,4 @@
 export type Section = {
-  title?: string
-  description?: string
   id: string
   background: string
 }
@@ -22,9 +20,9 @@ export const sections: Section[] = [
     id: "marmorino",
     background: '/marmorino.jpg'
   },
- {
+  {
     id: "contact",
     background: '/contact.jpg'
-  }
+  },
 ]
 

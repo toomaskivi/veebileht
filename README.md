@@ -1,9 +1,17 @@
 See on [Next.js](https://nextjs.org) veebileht mis kasutab CSS-teeki [Tailwind](https://tailwindcss.com) ja [TypeScripti](https://www.typescriptlang.org).
 
 ## Muudatuste tegemine
-1. Lisa [sections.ts](./src/sections.ts) faili uus sektsioon. Samas järjekorras ilmuvad sektsioonid menüüs.
+1. Lisa [src/sections.ts](./src/sections.ts) faili uus sektsioon. Samas järjekorras ilmuvad sektsioonid menüüs.
 2. Lisa [public](./public/) kausta uus ([PAKITUD!](https://squoosh.app/)) pilt, mille nimi on sama mis sai eelmises punktis sektsiooni sätestatud.
 3. Lisa [tõlgete faili](./messages/et.json) faili uus sektsioon kasutades sektsiooni id-d nimena. Ära unusta lisada ka inglise keelsed tõlked.
+
+## Tõlked
+Kasutajaliidese tõlgete failid on [messages](./messages) kaustas.
+
+Uue keele lisamiseks:
+1) Lisa uue keele 2-kohaline kood [src/languages.ts](./src/languages.ts) faili.
+2) Duplikeeri [messages/et.json](./messages/et.json) faili ja asenda faili nimes `et` uue keele 2-kohalise koodiga.
+3) Asenda loodud failis tõlked uue keele tõlgetega.
 
 ## Getting Started
 Et jooksutada kohalikus arvutis serverit, installi [Node.js](https://nodejs.org/en/download) ja siis jooksuta:
