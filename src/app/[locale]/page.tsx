@@ -12,31 +12,33 @@ export default function Home() {
 	const { sections, activeSection, scrollToSection } = useSections();
 
 	return (
-		<main className="h-screen overflow-y-scroll snap-y snap-mandatory">
-			<Navigation
-				currentSection={activeSection}
-				scrollToSection={scrollToSection}
-			/>
-			{sections.map((section, index) => (
-				<section
-					key={section.id}
-					id={section.id}
-					ref={section.observer.ref}
-					className="relative h-screen snap-start"
-				>
-					<Image
-						src={section.background}
-						alt={t(`sections.${section.id}.title`)}
-						fill
-						className="object-cover"
-						priority={index === 0}
-					/>
-					<div className="absolute inset-0 bg-black/20" />
+		<main className="h-screen overflow-hidden">
+			<div className="h-full overflow-y-auto snap-y snap-mandatory">
+				<Navigation
+					currentSection={activeSection}
+					scrollToSection={scrollToSection}
+				/>
+				{sections.map((section, index) => (
+					<section
+						key={section.id}
+						id={section.id}
+						ref={section.observer.ref}
+						className="relative h-screen snap-start"
+					>
+						<Image
+							src={section.background}
+							alt={t(`sections.${section.id}.title`)}
+							fill
+							className="object-cover"
+							priority={index === 0}
+						/>
+						<div className="absolute inset-0 bg-black/20" />
 
-					<Section sectionId={section.id} />
-				</section>
-			))}
-			<Footer />
+						<Section sectionId={section.id} />
+					</section>
+				))}
+				<Footer />
+			</div>
 		</main>
 	);
 }
