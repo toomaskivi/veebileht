@@ -1,14 +1,15 @@
 "use client";
 
-import { sections as siteSections } from "@/sections"
+import {
+	type Section as SiteSection,
+	sections as siteSections,
+} from "@/sections";
 import { type SetStateAction, useCallback, useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
 const intersectionOptions = { threshold: 0.2, triggerOnce: false };
 
-export type Section = {
-	id: string;
-	background: string;
+export type Section = SiteSection & {
 	observer: ReturnType<typeof useInView>;
 };
 

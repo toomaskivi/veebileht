@@ -18,21 +18,19 @@ const LanguageSelector = () => {
 	return (
 		<div className="flex items-center">
 			{languages.map((locale, index) => (
-				<>
-					<Link
-						key={locale}
-						href={buildHref(locale)}
-						className={cn(
-							"block transition-opacity hover:opacity-100",
-							"text-xl text-shadow-pop",
-							locale === currentLocale ? "opacity-100" : "opacity-60",
-						)}
-						prefetch
-					>
-						{locale.toUpperCase()}
-					</Link>
+				<Link
+					key={locale}
+					href={buildHref(locale)}
+					className={cn(
+						"block transition-opacity hover:opacity-100",
+						"text-xl text-shadow-pop",
+						locale === currentLocale ? "opacity-100" : "opacity-60",
+					)}
+					prefetch
+				>
+					{locale.toUpperCase()}
 					{index < languages.length - 1 && <span className="mx-2">|</span>}
-				</>
+				</Link>
 			))}
 		</div>
 	);

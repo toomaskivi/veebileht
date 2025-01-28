@@ -1,28 +1,32 @@
 export type Section = {
   id: string
   background: string
+  mobileBackgroundOffset?: string
 }
 
 export const sections: Section[] = [
   {
     id: "savikrohv",
-    background: '/savikrohv.jpg'
+    background: '/savikrohv.jpg',
   },
   {
     id: "plaster",
-    background: "/lubikrohv.jpg"
+    background: "/lubikrohv.jpg",
+    mobileBackgroundOffset: 'calc(50% + -100px) center',
   },
   {
     id: "microcement",
-    background: '/mikrowc.jpg'
+    background: '/mikrowc.jpg',
   },
   {
     id: "marmorino",
-    background: '/marmorino.jpg'
+    background: '/marmorino.jpg',
+    mobileBackgroundOffset: 'center top',
   },
   {
     id: "contact",
-    background: '/contact.jpg'
+    background: '/contact.jpg',
+    mobileBackgroundOffset: 'calc(50% + -300px) center'
   },
 ]
 
