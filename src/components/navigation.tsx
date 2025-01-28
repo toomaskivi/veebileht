@@ -14,7 +14,7 @@ const Navigation = (props: NavigationProps) => {
 	const t = useTranslations("Index");
 
 	return (
-		<nav>
+		<nav className="text-white">
 			<div className="absolute top-8 right-8 z-10 overflow-hidden">
 				<LanguageSelector />
 			</div>
