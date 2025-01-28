@@ -6,10 +6,13 @@ import Section from "@/components/section";
 import useSections from "@/hooks/use-sections";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { useMediaQuery } from "react-responsive";
 
 export default function Home() {
 	const t = useTranslations("Index");
 	const { sections, activeSection, scrollToSection } = useSections();
+
+	const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
 
 	return (
 		<main className="h-screen overflow-hidden">
@@ -31,6 +34,12 @@ export default function Home() {
 							fill
 							className="object-cover"
 							priority={index === 0}
+							style={{
+								objectPosition:
+									isMobile && !!section.mobileBackgroundOffset
+										? section.mobileBackgroundOffset
+										: "center",
+							}}
 						/>
 						<div className="absolute inset-0 bg-black/20" />
 
