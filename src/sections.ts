@@ -21,7 +21,6 @@ export const sections: Section[] = [
   {
     id: "marmorino",
     background: '/marmorino.jpg',
-    mobileBackgroundOffset: 'center top',
   },
   {
     id: "contact",
