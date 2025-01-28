@@ -9,7 +9,7 @@ const Section = (props: SectionProps) => {
 	const t = useTranslations("Index");
 
 	return (
-		<div className="pt-60 md:pt-20 px-8 absolute text-center text-white md:left-auto md:top-1/4 md:right-1/4 md:-translate-x-0 md:-translate-y-0">
+		<div className="pt-48 md:pt-20 px-8 absolute text-center text-white md:right-auto md:top-1/4 md:left-1/4 md:-translate-x-0 md:-translate-y-0">
 			<h1
 				className="text-5xl md:text-7xl font-bold mb-6 tracking-tight text-shadow-pop text-right"
 				style={{ fontFamily: "var(--font-chivo)" }}
