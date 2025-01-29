@@ -4,10 +4,10 @@ import {
 	type Section as SiteSection,
 	sections as siteSections,
 } from "@/sections";
-import { type SetStateAction, useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
-const intersectionOptions = { threshold: 0.2, triggerOnce: false };
+const intersectionOptions = { threshold: 0.1, triggerOnce: false };
 
 export type Section = SiteSection & {
 	observer: ReturnType<typeof useInView>;
@@ -16,55 +16,46 @@ export type Section = SiteSection & {
 export default function useSections() {
 	const [activeSection, setActiveSection] = useState(0);
 
-	const sections: Section[] = siteSections.map((section) => ({
-		...section,
-		observer: useInView(intersectionOptions),
-	}));
+	const sections: Section[] = siteSections.map((section) => {
+		const observer = useInView(intersectionOptions);
+		return { ...section, observer };
+	});
 
-	const scrollToSection = useCallback((index: number) => {
-		sections[index].observer.entry?.target.scrollIntoView({
-			behavior: "smooth",
-			block: "start",
-		});
-		setActiveSection(index);
-	}, [sections]);
+	const scrollToSection = useCallback(
+		(index: number) => {
+			sections[index].observer.entry?.target.scrollIntoView({
+				behavior: "smooth",
+				block: "start",
+			});
+			setActiveSection(index);
+		},
+		[sections],
+	);
 
-	const handleInitialiseSections = useCallback(() => {
-		const inViewIndexOrder: SetStateAction<number>[] = [];
-
-		sections
-			.map(({ observer }) => observer)
-			.sort(
-				(a, b) =>
-					(a?.entry?.boundingClientRect?.top ?? 0) -
-					(b?.entry?.boundingClientRect?.top ?? 0),
-			)
-			.forEach(({ inView }, index) => inView && inViewIndexOrder.push(index));
-
-		setActiveSection(inViewIndexOrder[0]);
-	}, [sections]);
-
-	useEffect(() => handleInitialiseSections(), [handleInitialiseSections]);
-
-	const handleKeyDown = useCallback(
+	const handleKeyUp = useCallback(
 		(event: KeyboardEvent) => {
 			if (event.key === "ArrowUp" || event.key === "ArrowDown") {
 				event.preventDefault();
-				const newIndex =
-					event.key === "ArrowUp"
-						? (activeSection - 1 + sections.length) % sections.length
-						: (activeSection + 1) % sections.length;
-				scrollToSection(newIndex);
+				let newIndex = activeSection;
+				if (event.key === "ArrowUp") {
+					newIndex = Math.max(activeSection - 1, 0);
+				} else if (event.key === "ArrowDown") {
+					newIndex = Math.min(activeSection + 1, sections.length - 1);
+				}
+
+				if (newIndex !== activeSection) {
+					scrollToSection(newIndex);
+				}
 			}
 		},
 		[activeSection, sections.length, scrollToSection],
 	);
 
 	useEffect(() => {
-		window.addEventListener("keydown", handleKeyDown);
+		window.addEventListener("keyup", handleKeyUp);
 
-		return () => window.removeEventListener("keydown", handleKeyDown);
-	}, [handleKeyDown]);
+		return () => window.removeEventListener("keyup", handleKeyUp);
+	}, [handleKeyUp]);
 
 	return { sections, activeSection, scrollToSection };
 }
