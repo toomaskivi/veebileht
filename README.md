@@ -9,7 +9,7 @@ See on [Next.js](https://nextjs.org) veebileht mis kasutab CSS-teeki [Tailwind](
 Kasutajaliidese tõlgete failid on [messages](./messages) kaustas.
 
 Uue keele lisamiseks:
-1) Lisa uue keele 2-kohaline kood [src/languages.ts](./src/languages.ts) faili.
+1) Lisa uue keele 2-kohaline kood koos keele nimega [src/languages.ts](./src/languages.ts) faili.
 2) Lisa uue keele 2-kohaline kood [src/middleware.ts](./src/middleware.ts) faili `|`märgiga eraldatuna.
 2) Duplikeeri [messages/et.json](./messages/et.json) faili ja asenda faili nimes `et` uue keele 2-kohalise koodiga.
 3) Asenda loodud failis tõlked uue keele tõlgetega.
