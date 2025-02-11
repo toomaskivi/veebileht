@@ -4,7 +4,7 @@ import {
 	type Section as SiteSection,
 	sections as siteSections,
 } from "@/sections";
-import { useCallback, useEffect, useState } from "react";
+import { type SetStateAction, useCallback, useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
 const intersectionOptions = { threshold: 0.1, triggerOnce: false };
@@ -27,10 +27,26 @@ export default function useSections() {
 				behavior: "smooth",
 				block: "start",
 			});
-			setActiveSection(index);
 		},
 		[sections],
 	);
+
+	const handleInitialiseSections = useCallback(() => {
+		const inViewIndexOrder: SetStateAction<number>[] = [];
+
+		sections
+			.map(({ observer }) => observer)
+			.sort(
+				(a, b) =>
+					(a?.entry?.boundingClientRect?.top ?? 0) -
+					(b?.entry?.boundingClientRect?.top ?? 0),
+			)
+			.forEach(({ inView }, index) => inView && inViewIndexOrder.push(index));
+
+		setActiveSection(inViewIndexOrder[0]);
+	}, [sections]);
+
+	useEffect(() => handleInitialiseSections(), [handleInitialiseSections]);
 
 	const handleKeyUp = useCallback(
 		(event: KeyboardEvent) => {
